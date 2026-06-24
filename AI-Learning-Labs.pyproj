@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>03-code-interpreter\lab002-code-interpreter.py</StartupFile>
+    <StartupFile>03-code-interpreter\lab006-Excercise-use-own-data.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,10 @@
     <Compile Include="01-chat-completions\test_connection.py" />
     <Compile Include="03-code-interpreter\lab001-basic-reponse.py" />
     <Compile Include="03-code-interpreter\lab002-code-interpreter.py" />
+    <Compile Include="03-code-interpreter\lab003-web-search.py" />
+    <Compile Include="03-code-interpreter\lab004-file-search.py" />
+    <Compile Include="03-code-interpreter\lab005-function-calling.py" />
+    <Compile Include="03-code-interpreter\lab006-Excercise-use-own-data.py" />
     <Compile Include="AI_Learning_Labs.py" />
     <Compile Include="shared\__init__.py" />
     <Compile Include="shared\config.py" />
@@ -36,12 +40,21 @@
     <Folder Include="03-code-interpreter\" />
     <Folder Include="04-rag\" />
     <Folder Include="05-agents\" />
+    <Folder Include="data\" />
+    <Folder Include="data\brochures\" />
     <Folder Include="shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
     <Content Include=".gitignore" />
     <Content Include="03-code-interpreter\README.md" />
+    <Content Include="data\brochures\Dubai Brochure.pdf" />
+    <Content Include="data\brochures\Las Vegas Brochure.pdf" />
+    <Content Include="data\brochures\London Brochure.pdf" />
+    <Content Include="data\brochures\Margies Travel Company Info.pdf" />
+    <Content Include="data\brochures\New York Brochure.pdf" />
+    <Content Include="data\brochures\San Francisco Brochure.pdf" />
+    <Content Include="data\retro-dos-race-games.md" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="shared\_Install.txt" />
