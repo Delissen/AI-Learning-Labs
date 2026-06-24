@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>01-chat-completions\test_connection.py</StartupFile>
+    <StartupFile>03-code-interpreter\lab002-code-interpreter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="01-chat-completions\test_connection.py" />
+    <Compile Include="03-code-interpreter\lab001-basic-reponse.py" />
+    <Compile Include="03-code-interpreter\lab002-code-interpreter.py" />
     <Compile Include="AI_Learning_Labs.py" />
     <Compile Include="shared\__init__.py" />
     <Compile Include="shared\config.py" />
@@ -39,6 +41,7 @@
   <ItemGroup>
     <Content Include=".env" />
     <Content Include=".gitignore" />
+    <Content Include="03-code-interpreter\README.md" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="shared\_Install.txt" />
