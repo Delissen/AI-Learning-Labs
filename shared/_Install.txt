@@ -1,0 +1,83 @@
+AI-Learning-Labs
+
+Doel:
+Centrale leeromgeving voor AI-103, Azure AI Foundry, Azure OpenAI
+en toekomstige AI demo-projecten.
+
+--------------------------------------------------
+1. Virtuele omgeving maken
+--------------------------------------------------
+
+Waarom?
+
+Hiermee worden alle Python packages lokaal voor dit project
+geïnstalleerd. Zo voorkom je conflicten met andere projecten.
+
+Commando:
+
+python -m venv .venv
+
+--------------------------------------------------
+2. Virtuele omgeving activeren
+--------------------------------------------------
+
+Waarom?
+
+Zorgt ervoor dat alle installaties in de lokale omgeving
+terechtkomen.
+
+Commando:
+
+.venv\Scripts\activate
+
+--------------------------------------------------
+3. OpenAI SDK installeren
+--------------------------------------------------
+
+Waarom?
+
+Wordt gebruikt voor Azure OpenAI, Chat Completions,
+Responses API, Agents en Code Interpreter.
+
+Commando:
+
+pip install openai
+
+.\.venv\Scripts\python.exe -m pip install openai
+
+--------------------------------------------------
+4. Python DotEnv installeren
+--------------------------------------------------
+
+Waarom?
+
+Maakt het mogelijk om API Keys en configuratie
+in een .env bestand op te slaan.
+
+Commando:
+
+pip install python-dotenv
+
+.\.venv\Scripts\python.exe -m pip install python-dotenv
+
+--------------------------------------------------
+5. Requirements bestand genereren
+--------------------------------------------------
+
+Waarom?
+
+Documenteert alle geïnstalleerde packages zodat
+de omgeving later eenvoudig opnieuw kan worden opgebouwd.
+
+Commando:
+
+pip freeze > requirements.txt
+
+.\.venv\Scripts\python.exe -m pip freeze > requirements.txt
+--------------------------------------------------
+6. Omgeving opnieuw opbouwen
+--------------------------------------------------
+
+Commando:
+
+pip install -r requirements.txt

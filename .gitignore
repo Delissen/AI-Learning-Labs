@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+
+# Secrets
+.env
+
+# Visual Studio
+.vs/
+
+# Build
+dist/
+build/
+
+# OS
+Thumbs.db
+.DS_Store
