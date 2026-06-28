@@ -301,3 +301,243 @@ This lab demonstrates how an Azure AI Foundry Agent can:
 This is one of the foundational patterns for building AI-powered business applications with Azure AI Foundry.
 
 More information can be found in the official documentation: https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/01-build-agent-portal-and-vscode.html
+
+
+
+# Lab 002 - Azure AI Foundry Agent with Custom Function Tools
+
+## Overview
+
+This lab demonstrates how to extend an Azure AI Foundry Agent with custom Python Function Tools.
+
+Unlike the previous lab, where the Agent relied on built-in capabilities such as Knowledge Files and the Code Interpreter, this lab introduces **Function Calling**. The Large Language Model (LLM) can decide autonomously when external functionality is required and invoke Python functions to retrieve data, perform calculations or generate reports.
+
+This implementation is based on the Microsoft Learn exercise but has been refactored into a cleaner, more maintainable structure suitable for long-term learning and GitHub publication. :contentReference[oaicite:0]{index=0}
+
+---
+
+# Learning Objectives
+
+This lab covers the following AI-103 concepts:
+
+- Azure AI Foundry Agents
+- Prompt Agent Definitions
+- Function Calling
+- Function Tools
+- Azure AI Projects SDK
+- Azure OpenAI Responses API
+- Conversation Management
+- Custom Tool Execution
+- JSON Serialization
+- Local File Generation
+
+---
+
+# Solution Architecture
+
+```text
+                User
+                  │
+                  ▼
+      Azure AI Foundry Agent
+                  │
+      Determines a Tool is required
+                  │
+                  ▼
+        Python Function Tool
+      (Lab002_agent_custom_tools.py)
+                  │
+          JSON Response
+                  │
+                  ▼
+        Azure AI Foundry Agent
+                  │
+                  ▼
+          Response to User
+```
+
+The Agent itself contains no business logic.
+
+Instead it delegates specific tasks to custom Python functions.
+
+---
+
+# Implemented Function Tools
+
+## next_visible_event()
+
+Returns the next astronomical event that is visible from a specified location.
+
+Uses:
+
+```
+data/events.txt
+```
+
+---
+
+## calculate_observation_cost()
+
+Calculates telescope reservation costs based on:
+
+- Telescope Tier
+- Number of Hours
+- Priority Level
+
+Uses:
+
+```
+data/telescope_rates.txt
+data/priority_multipliers.txt
+```
+
+---
+
+## generate_observation_report()
+
+Generates a complete observation report and stores it locally as a text file.
+
+The report contains:
+
+- Observer information
+- Observation details
+- Telescope reservation
+- Cost calculation
+- Next visible event
+
+---
+
+# Repository Structure
+
+```text
+05-agents/
+│
+├── Lab001_agents_with_functions.py
+├── Lab002_agent.py
+├── README.md
+│
+shared/
+│   ├── config.py
+│   ├── console.py
+│   ├── foundry.py
+│   └── Lab002_agent_custom_tools.py
+│
+data/
+│   ├── events.txt
+│   ├── telescope_rates.txt
+│   ├── priority_multipliers.txt
+│   └── lab001-agents-with-functions/
+```
+
+---
+
+# Azure Resources
+
+This lab requires:
+
+- Azure AI Foundry Project
+- Azure OpenAI Deployment
+- Azure AI Projects SDK
+- Azure Subscription
+
+---
+
+# Configuration
+
+Create a `.env` file in the project root.
+
+Example:
+
+```env
+FOUNDRY_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<project>
+
+FOUNDRY_MODEL_DEPLOYMENT=gpt-4.1
+
+FOUNDRY_AGENT_NAME=astronomy-agent
+```
+
+Authentication is performed using:
+
+```python
+DefaultAzureCredential()
+```
+
+Supported authentication methods include:
+
+- Visual Studio
+- Azure CLI
+- Visual Studio Code
+- Managed Identity
+
+Login example:
+
+```bash
+az login
+```
+
+---
+
+# Running the Lab
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run:
+
+```bash
+python 05-agents/Lab002_agent.py
+```
+
+Example prompt:
+
+```text
+Find me the next event I can see from South America and give me the cost for 5 hours of premium telescope time at normal priority.
+```
+
+---
+
+# Generated Output
+
+The application can generate:
+
+- Observation reports
+- Cost calculations
+- JSON responses
+
+Example:
+
+```
+report_total_lunar_eclipse_2026-06-28_1930.txt
+```
+
+---
+
+# Key Takeaways
+
+After completing this lab you understand how an Azure AI Foundry Agent can:
+
+- Invoke custom Python functions
+- Perform deterministic calculations
+- Read structured local datasets
+- Generate files
+- Return structured JSON to the LLM
+- Combine LLM reasoning with external business logic
+
+This pattern forms the foundation for building enterprise AI agents that integrate with existing applications, APIs and business systems.
+
+---
+
+# Based on
+
+Microsoft Learn
+
+**Develop AI Agents with Azure AI Foundry**
+
+Exercise:
+
+> Agent Custom Tools
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-agent-custom-tools.html
