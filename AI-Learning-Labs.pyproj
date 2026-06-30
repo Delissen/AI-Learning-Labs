@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>05-agents\Lab002_agent.py</StartupFile>
+    <StartupFile>mcpagent\client.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,10 @@
     <Compile Include="03-code-interpreter\lab005-function-calling.py" />
     <Compile Include="03-code-interpreter\lab006-Excercise-use-own-data.py" />
     <Compile Include="05-agents\Lab001_agents_with_functions.py" />
+    <Compile Include="05-agents\Lab003_mcp_remote.py" />
+    <Compile Include="mcpagent\client.py" />
+    <Compile Include="mcpagent\server.py" />
+    <Compile Include="mcpagent\__init__.py" />
     <Compile Include="shared\console.py" />
     <Compile Include="shared\foundry.py" />
     <Compile Include="shared\Lab002_agent_custom_tools.py" />
@@ -49,6 +53,7 @@
     <Folder Include="data\" />
     <Folder Include="data\brochures\" />
     <Folder Include="data\lab001-agents-with-functions\" />
+    <Folder Include="mcpagent\" />
     <Folder Include="shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +74,7 @@
     <Content Include="data\priority_multipliers.txt" />
     <Content Include="data\retro-dos-race-games.md" />
     <Content Include="data\telescope_rates.txt" />
+    <Content Include="mcpagent\README.md" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="shared\_Install.txt" />
