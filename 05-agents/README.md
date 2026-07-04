@@ -1,57 +1,67 @@
-# Azure AI Agents
+# Azure AI Foundry Agents
 
-This folder contains the Azure AI Agent labs created while completing the **Microsoft AI-103** learning path.
+This folder contains a collection of Azure AI Foundry Agent samples created while completing the **Microsoft AI-103** learning path.
 
-The labs gradually build upon each other and demonstrate how Azure AI Foundry Agents can be extended with additional capabilities such as Function Calling and the Model Context Protocol (MCP).
+Each lab introduces a new capability of Azure AI Foundry Agents. Together they demonstrate the evolution from basic conversational agents to enterprise-grade AI solutions using Retrieval-Augmented Generation (RAG), Azure AI Foundry IQ, Function Calling and the Model Context Protocol (MCP).
 
 ---
 
 # Learning Objectives
 
-The labs cover the following AI-103 concepts:
+The labs demonstrate the following Azure AI concepts:
 
 - Azure AI Foundry Agent Service
-- Prompt Agent Definitions
 - Azure AI Projects SDK
 - Azure OpenAI Responses API
 - Conversations API
-- Function Calling
-- Function Tools
-- Model Context Protocol (MCP)
-- Remote MCP Servers
-- Local MCP Servers
+- Agent References
 - Azure Identity Authentication
+- Knowledge Files
+- Code Interpreter
+- Function Calling
+- Azure AI Foundry IQ
+- Knowledge Sources
+- Knowledge Bases
+- Retrieval Augmented Generation (RAG)
+- Azure Blob Storage
+- Azure AI Search
+- Remote MCP Servers
 
 ---
 
 # Lab Overview
 
-## Lab001 - Agents with Knowledge Files and Code Interpreter
+## Lab001 – Azure AI Foundry Agent with Knowledge Files
 
-Demonstrates how to build an Azure AI Foundry Agent that uses:
+Introduces Azure AI Foundry Agents using uploaded knowledge files.
+
+Implemented concepts:
 
 - Knowledge Files
-- Code Interpreter
 - Conversations API
 - Responses API
-
-The Python application communicates with the Azure AI Agent and automatically processes generated files and charts.
+- Agent Instructions
 
 **Source**
 
-```
+```text
 Lab001_agents_with_functions.py
 ```
 
 ---
 
-## Lab002 - Azure AI Agent with Custom Function Tools
+## Lab002 – Azure AI Agent with Custom Function Tools
 
-Introduces **Function Calling**.
+Demonstrates how an Azure AI Agent can execute deterministic business logic by invoking custom Python functions.
 
-Instead of relying only on built-in Agent capabilities, the Large Language Model can invoke custom Python functions to perform deterministic business logic.
+Implemented concepts:
 
-Implemented Function Tools:
+- Function Calling
+- Function Tools
+- Tool Registration
+- Business Logic Integration
+
+Example functions:
 
 - next_visible_event()
 - calculate_observation_cost()
@@ -59,76 +69,61 @@ Implemented Function Tools:
 
 **Source**
 
-```
+```text
 Lab002_agent.py
 ```
 
 ---
 
-## Lab003 - Azure AI Agent with a Remote MCP Server
+## Lab003 – Azure AI Agent with a Remote MCP Server
 
 Introduces the **Model Context Protocol (MCP)**.
 
-Instead of calling local Python functions, the Azure AI Agent connects to the **Microsoft Learn MCP Server**.
-
-The agent dynamically discovers available tools and requests approval before executing them.
+Instead of calling local Python functions, the Agent connects to the Microsoft Learn MCP Server and dynamically discovers available tools.
 
 Implemented concepts:
 
-- MCPTool
+- Model Context Protocol (MCP)
+- Remote MCP Server
 - Tool Discovery
 - MCP Approval Requests
-- Remote MCP Server
-- Microsoft Learn MCP Server
 
 **Source**
 
-```
+```text
 Lab003_mcp_remote.py
 ```
 
 ---
 
-## Lab004 - Azure AI Agent with a Local MCP Server
+## Lab004 – Azure AI Foundry IQ Knowledge Base (RAG)
 
-The next step is hosting your own MCP Server.
+Demonstrates how to build a Retrieval-Augmented Generation (RAG) solution using Azure AI Foundry IQ.
 
-The local implementation consists of two components:
+The Azure AI Agent retrieves information from PDF documents stored in Azure Blob Storage through an Azure AI Search index.
 
-```
-mcpagent/
-├── client.py
-└── server.py
-```
+Knowledge sources include:
 
-The MCP Client connects Azure AI Foundry with a locally running MCP Server.
+- Contoso Product Catalog
+- Camping Accessories
+- Backpack Guide
 
-The MCP Server exposes inventory-related business functions as AI tools.
+Implemented concepts:
 
-This demonstrates how enterprise applications can expose internal functionality through the Model Context Protocol.
+- Azure AI Foundry IQ
+- Knowledge Sources
+- Knowledge Bases
+- Azure Blob Storage
+- Azure AI Search
+- Retrieval-Augmented Generation (RAG)
+- Agent References
+- Conversations API
+- Responses API
 
----
-
-# Solution Evolution
+**Source**
 
 ```text
-Lab001
-Knowledge Files
-Code Interpreter
-        │
-        ▼
-Lab002
-Function Calling
-        │
-        ▼
-Lab003
-Remote MCP Server
-(Microsoft Learn)
-        │
-        ▼
-Lab004
-Local MCP Server
-(Custom Business Logic)
+Lab004_agent_client_contoso.py
 ```
 
 ---
@@ -141,27 +136,83 @@ Local MCP Server
 ├── Lab001_agents_with_functions.py
 ├── Lab002_agent.py
 ├── Lab003_mcp_remote.py
+├── Lab004_agent_client_contoso.py
 ├── README.md
 │
-mcpagent/
-│   ├── client.py
-│   ├── server.py
-│   └── README.md
+├── data/
+│   └── contosoproducts/
+│       ├── contoso-backpacks-guide.pdf
+│       ├── contoso-camping-accessories.pdf
+│       └── contoso-tents-catalog.pdf
 │
-shared/
+├── shared/
+│   ├── config.py
+│   ├── console.py
+│   └── openai_client.py
 │
-data/
+└── mcpagent/
+    ├── client.py
+    ├── server.py
+    └── README.md
+```
+
+---
+
+# Solution Evolution
+
+```text
+Lab001
+Knowledge Files
+        │
+        ▼
+Lab002
+Function Calling
+        │
+        ▼
+Lab003
+Remote MCP Server
+        │
+        ▼
+Lab004
+Azure AI Foundry IQ
+Knowledge Base (RAG)
+```
+
+---
+
+# Architecture
+
+```text
+Azure AI Foundry Project
+          │
+          ▼
+Azure AI Agent
+          │
+          ├──────────────┐
+          │              │
+          ▼              ▼
+Function Tools      Knowledge Base
+                          │
+                          ▼
+                   Azure AI Search
+                          │
+                          ▼
+                  Azure Blob Storage
+                          │
+                          ▼
+                     PDF Documents
 ```
 
 ---
 
 # Azure Resources
 
-These labs require:
+The samples require the following Azure resources:
 
 - Azure AI Foundry Project
 - Azure OpenAI Deployment
-- Azure AI Projects SDK
+- Azure AI Search
+- Azure Blob Storage
 - Azure Subscription
 
 Authentication is performed using:
@@ -179,21 +230,11 @@ Supported authentication methods:
 
 ---
 
-# Required Python Packages
-
-Install all required packages using:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
 # Configuration
 
-The labs use a shared configuration module.
+All samples use a shared configuration module.
 
-Environment variables are loaded from the project `.env` file through:
+Environment variables are loaded from the project `.env` file via:
 
 ```python
 shared.config
@@ -202,26 +243,51 @@ shared.config
 Example:
 
 ```env
-FOUNDRY_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<project>
-
-FOUNDRY_MODEL_DEPLOYMENT=gpt-4.1
+FOUNDRY_PROJECT_ENDPOINT=https://<project>.services.ai.azure.com/api/projects/<project>
 
 FOUNDRY_AGENT_NAME=my-agent
+
+FOUNDRY_MODEL_DEPLOYMENT=gpt-4.1-mini
+```
+
+Some labs define additional configuration variables for dedicated Azure AI Foundry projects.
+
+Example:
+
+```env
+FOUNDRY_PROJECT_ENDPOINT_CONTOSO=...
+
+FOUNDRY_AGENT_NAME_CONTOSO=...
+```
+
+---
+
+# Required Python Packages
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
 # Key Takeaways
 
-These labs demonstrate the natural evolution of Azure AI Agents:
+These labs demonstrate the evolution of Azure AI Foundry Agents from simple conversational assistants to enterprise AI applications.
 
-- Using built-in Agent capabilities
-- Extending Agents with Python Function Tools
-- Connecting to Remote MCP Servers
-- Hosting your own Local MCP Server
-- Integrating AI Agents with external business logic
+Topics include:
 
-Together these examples form a practical reference implementation for building enterprise AI solutions with Azure AI Foundry and the Model Context Protocol.
+- Knowledge Files
+- Function Calling
+- Azure AI Foundry IQ
+- Retrieval-Augmented Generation (RAG)
+- Azure AI Search
+- Azure Blob Storage
+- Remote MCP Servers
+- Enterprise Knowledge Integration
+
+Together these examples form a practical reference implementation for building enterprise AI solutions with Azure AI Foundry.
 
 ---
 
@@ -231,8 +297,3 @@ Microsoft Learn
 
 Develop AI Agents with Azure AI Foundry
 
-- Exercise 01 – Agents with Knowledge Files
-- Exercise 02 – Agent Custom Tools
-- Exercise 03 – MCP Integration
-
-https://microsoftlearning.github.io/mslearn-ai-agents/

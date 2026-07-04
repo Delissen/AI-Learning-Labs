@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>mcpagent\client.py</StartupFile>
+    <StartupFile>05-agents\lab004_agent_client_contoso.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,6 +30,7 @@
     <Compile Include="03-code-interpreter\lab004-file-search.py" />
     <Compile Include="03-code-interpreter\lab005-function-calling.py" />
     <Compile Include="03-code-interpreter\lab006-Excercise-use-own-data.py" />
+    <Compile Include="05-agents\lab004_agent_client_contoso.py" />
     <Compile Include="05-agents\Lab001_agents_with_functions.py" />
     <Compile Include="05-agents\Lab003_mcp_remote.py" />
     <Compile Include="mcpagent\client.py" />
@@ -52,6 +53,7 @@
     <Folder Include="05-agents\" />
     <Folder Include="data\" />
     <Folder Include="data\brochures\" />
+    <Folder Include="data\contosoproducts\" />
     <Folder Include="data\lab001-agents-with-functions\" />
     <Folder Include="mcpagent\" />
     <Folder Include="shared\" />
@@ -68,6 +70,9 @@
     <Content Include="data\brochures\Margies Travel Company Info.pdf" />
     <Content Include="data\brochures\New York Brochure.pdf" />
     <Content Include="data\brochures\San Francisco Brochure.pdf" />
+    <Content Include="data\contosoproducts\contoso-backpacks-guide.pdf" />
+    <Content Include="data\contosoproducts\contoso-camping-accessories.pdf" />
+    <Content Include="data\contosoproducts\contoso-tents-catalog.pdf" />
     <Content Include="data\events.txt" />
     <Content Include="data\lab001-agents-with-functions\IT_Policy.txt" />
     <Content Include="data\lab001-agents-with-functions\system_performance.csv" />
