@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>05-agents\lab004_agent_client_contoso.py</StartupFile>
+    <StartupFile>06-agent-framework\lab001_agent_framework.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,7 @@
     <Compile Include="05-agents\lab004_agent_client_contoso.py" />
     <Compile Include="05-agents\Lab001_agents_with_functions.py" />
     <Compile Include="05-agents\Lab003_mcp_remote.py" />
+    <Compile Include="06-agent-framework\lab001_agent_framework.py" />
     <Compile Include="mcpagent\client.py" />
     <Compile Include="mcpagent\server.py" />
     <Compile Include="mcpagent\__init__.py" />
@@ -56,6 +57,7 @@
     <Folder Include="data\contosoproducts\" />
     <Folder Include="data\lab001-agents-with-functions\" />
     <Folder Include="mcpagent\" />
+    <Folder Include="06-agent-framework\" />
     <Folder Include="shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +66,8 @@
     <Content Include=".gitignore" />
     <Content Include="03-code-interpreter\README.md" />
     <Content Include="05-agents\README.md" />
+    <Content Include="06-agent-framework\data.txt" />
+    <Content Include="06-agent-framework\README.md" />
     <Content Include="data\brochures\Dubai Brochure.pdf" />
     <Content Include="data\brochures\Las Vegas Brochure.pdf" />
     <Content Include="data\brochures\London Brochure.pdf" />
