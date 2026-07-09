@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6695f462-9502-464e-81aa-2ccc9c83fb85</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>07-multi-agent\Lab001_multi_agent.py</StartupFile>
+    <StartupFile>08_a2a_agent\run_all.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,6 +35,19 @@
     <Compile Include="05-agents\Lab003_mcp_remote.py" />
     <Compile Include="06-agent-framework\lab001_agent_framework.py" />
     <Compile Include="07-multi-agent\Lab001_multi_agent.py" />
+    <Compile Include="08_a2a_agent\client.py" />
+    <Compile Include="08_a2a_agent\outline_agent\agent.py" />
+    <Compile Include="08_a2a_agent\outline_agent\agent_executor.py" />
+    <Compile Include="08_a2a_agent\outline_agent\server.py" />
+    <Compile Include="08_a2a_agent\outline_agent\__init__.py" />
+    <Compile Include="08_a2a_agent\routing_agent\agent.py" />
+    <Compile Include="08_a2a_agent\routing_agent\server.py" />
+    <Compile Include="08_a2a_agent\routing_agent\__init__.py" />
+    <Compile Include="08_a2a_agent\run_all.py" />
+    <Compile Include="08_a2a_agent\title_agent\agent.py" />
+    <Compile Include="08_a2a_agent\title_agent\agent_executor.py" />
+    <Compile Include="08_a2a_agent\title_agent\server.py" />
+    <Compile Include="08_a2a_agent\title_agent\__init__.py" />
     <Compile Include="mcpagent\client.py" />
     <Compile Include="mcpagent\server.py" />
     <Compile Include="mcpagent\__init__.py" />
@@ -53,6 +66,9 @@
     <Folder Include="03-code-interpreter\" />
     <Folder Include="04-rag\" />
     <Folder Include="05-agents\" />
+    <Folder Include="08_a2a_agent\outline_agent\" />
+    <Folder Include="08_a2a_agent\routing_agent\" />
+    <Folder Include="08_a2a_agent\title_agent\" />
     <Folder Include="data\" />
     <Folder Include="data\brochures\" />
     <Folder Include="data\contosoproducts\" />
@@ -60,6 +76,7 @@
     <Folder Include="mcpagent\" />
     <Folder Include="06-agent-framework\" />
     <Folder Include="07-multi-agent\" />
+    <Folder Include="08_a2a_agent\" />
     <Folder Include="shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +88,10 @@
     <Content Include="06-agent-framework\data.txt" />
     <Content Include="06-agent-framework\README.md" />
     <Content Include="07-multi-agent\README.md" />
+    <Content Include="08_a2a_agent\.env.template" />
+    <Content Include="08_a2a_agent\.env" />
+    <Content Include="08_a2a_agent\README.md" />
+    <Content Include="08_a2a_agent\requirements.txt" />
     <Content Include="data\brochures\Dubai Brochure.pdf" />
     <Content Include="data\brochures\Las Vegas Brochure.pdf" />
     <Content Include="data\brochures\London Brochure.pdf" />
